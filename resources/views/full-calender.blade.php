@@ -18,9 +18,13 @@
 
 <div class="container">
     <div class="heading">
+
+        <div class="logo text-left mt-100">
+            <a href="/home" > <img src="img/back-arrow.png" width="40px" title="Powrót"  ></a>
+        </div>
         <div class="logo text-center">
             <a href="/">
-                <img src="img/logodenti.png" alt="User Icon" />
+                <img src="img/logodenti.png" />
             </a>
         </div>
         <br />
@@ -41,7 +45,7 @@
             const diffInMinutes = duration.asMinutes();
             console.log("diffInMinutes", diffInMinutes)
             return diffInMinutes <= 60;
-        }
+        };
         var calendar = $('#calendar').fullCalendar({
             header:{
                 left:'prev,next today',
@@ -85,6 +89,7 @@
                 }
             },
             editable:true,
+            @role('Doctor')
             eventResize: function(event, delta)
             {
                 var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
@@ -131,6 +136,8 @@
                     }
                 })
             },
+            @endrole
+            @role('Admin')
             eventClick:function(event)
             {
                 if(confirm("Jesteś pewien, że chcesz usunąć tą wizytę?"))
@@ -151,6 +158,7 @@
                     })
                 }
             }
+            @endrole
         });
         // calendar.render();
     });
