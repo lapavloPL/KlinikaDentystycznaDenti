@@ -42,7 +42,8 @@
         <p>Sprawdź kalendarz</p>
       </div>
       <div class="col-sm-4">
-        <img src="img/contact.png"></a>
+        <a href="{{ url('contact') }}"><img src="img/contact.png"></a>
+        <a href="{{ url('contact') }}">
         <h4 class="space">KONTAKT</h4>
       </a>
         <p>Skontaktuj się z nami</p>
