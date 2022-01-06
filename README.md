@@ -1,5 +1,12 @@
 # KlinikaDentystycznaDenti
 
+### Imiona i nazwiska studentów tworzących projekt:
+
+- Paweł Oleniuk
+- Monika Gontarek
+
+
+
 ## Uruchomienie projektu
 W celu uruchomienia projektu trzeba wykonac ponizsze czynnosci
 
