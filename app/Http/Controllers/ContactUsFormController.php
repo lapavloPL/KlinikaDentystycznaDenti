@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use Mail;
-
+/*
+ * Klasa umozliwia skontaktowanie sie z nami za pomoca formularza
+ */
 class ContactUsFormController extends Controller {
 
     // Create Contact Form

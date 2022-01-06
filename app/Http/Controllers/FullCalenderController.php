@@ -6,9 +6,13 @@ use http\Env\Response;
 use Illuminate\Http\Request;
 
 use App\Models\Event;
-
+/*
+ * Klasa umożliwia odczytywanie, dodawanie, usuwanie i aktualizacje wizyt u dentysty
+ */
 class FullCalenderController extends Controller
 {
+
+    // odczytywanie zdarzeń do kalendarza
    public function index(Request $request)
    {
        if($request->ajax())
@@ -24,6 +28,7 @@ class FullCalenderController extends Controller
    {
        if($request->ajax())
        {
+           // dodawanie wizyty u dentysty
             if($request->type == 'add')
             {
                 $event = Event::create([
@@ -35,6 +40,7 @@ class FullCalenderController extends Controller
                 return response()->json($event);
             }
 
+            // aktualizacja wizyty u dentysty
             if($request->type == 'update')
             {
                 $event = Event::find($request->id)->update([
@@ -46,7 +52,8 @@ class FullCalenderController extends Controller
                 return response()->json($event);
             }
 
-            if($request->type == 'delete')
+           // usuwanie wizyty u dentysty
+           if($request->type == 'delete')
             {
                 $event = Event::find($request->id)->delete();
 
